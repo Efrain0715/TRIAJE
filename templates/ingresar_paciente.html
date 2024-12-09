@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Paciente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='paciente_style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Ingresar Nuevo Paciente</h1>
+        <form method="POST" action="/ingresar_paciente">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required>
+            </div>
+
+            <h3>Seleccione los síntomas presentes:</h3>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Buscar síntomas...">
+            </div>
+            <div class="symptom-list" id="symptom-list">
+                {% for sintoma in sintomas %}
+                    <label data-sintoma="{{ sintoma[1] }}">
+                        <input type="checkbox" name="sintomas" value="{{ sintoma[3] }}"> {{ sintoma[1] }}
+                    </label><br>
+                {% endfor %}
+            </div>
+
+            <button type="submit">Registrar Paciente</button>
+        </form>
+    </div>
+
+    <script>
+        // Funcionalidad del buscador
+        document.getElementById('search').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const sintomas = document.querySelectorAll('.symptom-list label');
+
+            sintomas.forEach(function(sintoma) {
+                const text = sintoma.getAttribute('data-sintoma').toLowerCase();
+                if (text.includes(query)) {
+                    sintoma.style.display = 'block';
+                } else {
+                    sintoma.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

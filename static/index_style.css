@@ -1,0 +1,65 @@
+/* Configuración del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9; /* Fondo gris claro */
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+h1 {
+    color: #004080; /* Azul oscuro */
+    margin-bottom: 20px;
+}
+
+/* Texto de bienvenida */
+p {
+    color: #333333; /* Negro suave */
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Navegación */
+nav {
+    margin-top: 20px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin: 10px 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    background-color: #004080; /* Azul oscuro */
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: #003366; /* Azul más oscuro */
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluar Paciente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Evaluación del Paciente</h1>
+    <form method="POST" action="/evaluar_paciente">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br>
+
+        <h3>Seleccione los síntomas presentes:</h3>
+        {% for sintoma in sintomas %}
+            <label>
+                <input type="checkbox" name="respuestas" value="nivel_{{ sintoma[3] }}">
+                {{ sintoma[1] }} ({{ sintoma[2] }})
+            </label><br>
+        {% endfor %}
+
+        <button type="submit">Evaluar</button>
+    </form>
+</body>
+</html>

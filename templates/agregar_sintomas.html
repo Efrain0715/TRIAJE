@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Síntomas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sintomas_style.css') }}">
+</head>
+<body>
+    <div class="slide-container">
+        <h1>Agregar Nuevo Síntoma</h1>
+        <form method="POST" action="/agregar_sintoma">
+            <div class="form-group">
+                <label for="nombre">Nombre del Síntoma:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del síntoma" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" placeholder="Ingrese una breve descripción" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="nivel_triage">Nivel de Triage:</label>
+                <select id="nivel_triage" name="nivel_triage" required>
+                    <option value="1">Nivel 1 - Emergencia</option>
+                    <option value="2">Nivel 2 - Urgente</option>
+                    <option value="3">Nivel 3 - No Urgente</option>
+                </select>
+            </div>
+
+            <button type="submit">Agregar Síntoma</button>
+        </form>
+    </div>
+</body>
+</html>

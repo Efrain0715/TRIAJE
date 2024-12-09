@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Síntomas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Lista de Síntomas</h1>
+    <a href="{{ url_for('agregar_sintoma') }}"><button>Agregar Nuevo Síntoma</button></a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Nivel de Triage</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sintoma in sintomas %}
+            <tr>
+                <td>{{ sintoma[0] }}</td>
+                <td>{{ sintoma[1] }}</td>
+                <td>{{ sintoma[2] }}</td>
+                <td>{{ sintoma[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+

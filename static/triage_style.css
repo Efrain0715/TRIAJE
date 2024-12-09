@@ -1,0 +1,49 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+/* Estilos para las tablas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Colores para los niveles de urgencia */
+.emergencia {
+    background-color: #ffcccc; /* Rojo */
+}
+
+.urgente {
+    background-color: #ffcc80; /* Naranja */
+}
+
+.no-urgente {
+    background-color: #ccffcc; /* Verde */
+}

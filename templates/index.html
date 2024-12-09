@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al Sistema Experto de Triage</h1>
+        <p>Este sistema permite gestionar síntomas y calcular niveles de triage.</p>
+        
+        <nav>
+            <ul class="nav-list">
+                <li><a href="{{ url_for('listar_sintomas') }}">Ver Lista de Síntomas</a></li>
+                <li><a href="{{ url_for('agregar_sintoma') }}">Agregar Nuevo Síntoma</a></li>
+                <li><a href="{{ url_for('ingresar_paciente') }}">Ingresar Paciente</a></li>
+                <li><a href="{{ url_for('listar_pacientes') }}">Ver Lista de Pacientes</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
